@@ -13,7 +13,7 @@
     font-family: system-ui;
     }
     .wrap {
-    width: 960px;
+    width: 1500px;
     height: auto;
     padding: 0 0 50px;
     margin: 0 auto;
@@ -49,6 +49,7 @@
     
 }
 .list-area .area-complete,
+.list-area.area-stock,
 .list-area .area-incomplete {
     width: 470px;
 }
@@ -60,7 +61,7 @@
     justify-content: space-between;
     list-style: none;
     padding: 10px 20px 10px 32px;
-    width: 100%
+    width: 105%
 }
 .list:not(:first-child) {
     margin-top: 16px;
@@ -80,6 +81,10 @@
 .list-button.button-done {
     background: #4CAF50;
     color: #eee;
+}
+.list-button.button-stock{
+    background: #fcd766;
+    color: #111010;
 }
 .list-button.button-delete {
     background: #f44336;

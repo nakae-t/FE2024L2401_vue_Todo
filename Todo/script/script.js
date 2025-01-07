@@ -18,7 +18,7 @@ new Vue({
       const text = this.text;
       const id = Math.ceil(Math.random() * 1000);
       const todo = {
-        id,text,isDone: false
+        id,text,isDone: false,isStock:false
       };
       this.todos.push(todo);
       this.resetText();
@@ -36,6 +36,10 @@ new Vue({
       const index = this.getIndexBy(id);
       this.todos[index].isDone =! this.todos[index].isDone;
     },
+    stock(id){
+      const index = this.getIndexBy(id);
+      this.todos[index].isStock =! this.todos[index].isStock;
+    },
     getIndexBy(id){
       const filteredTodo = this.todos.filter(todo => todo.id === id)[0];
       const index = this.todos.indexOf(filteredTodo);
@@ -46,8 +50,11 @@ new Vue({
     doneTodo(){
       return this.todos.filter(todo => todo.isDone === true);
     },
+    stockTodo(){
+      return this.todos.filter(todo => todo.isStock === true);
+    },
     incompleteTodo(){
-      return this.todos.filter(todo => todo.isDone === false);
+      return this.todos.filter(todo => todo.isDone === false && todo.isStock === false);
     }
   }
 });
